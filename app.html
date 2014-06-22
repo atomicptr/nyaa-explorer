@@ -54,7 +54,10 @@
 <script src="nyaa.js"></script>
 <script>
 	var gui = require("nw.gui");
-
+	var http = require("http");
+	var fs = require("fs");
+	var path = require("path");
+	
 	var search_options = {
 		base_url: URL_NYAA,
 		query: undefined
@@ -113,8 +116,27 @@
 	}
 	
 	function download_item(url) {
-		// TODO: download item and start it via gui.Shell.openItem(...);
-		gui.Shell.openExternal(url);
+		fs.mkdir("downloads", function() {
+			var filename_raw = url.split("tid=");
+			
+			var filename = filename_raw[filename_raw.length - 1] + ".torrent";
+			
+			var file_path = path.join("downloads", filename);
+		
+			var file = fs.createWriteStream(filename);
+
+			var request = http.get(url, function(response) {
+				response.pipe(file);
+				
+				response.on("end", function() {
+					gui.Shell.openItem(filename);
+					
+					setTimeout(function() {
+						fs.rename(filename, file_path);
+					}, 5000);
+				});
+			});
+		});
 	}
 	
 	function pad(num, size) {
