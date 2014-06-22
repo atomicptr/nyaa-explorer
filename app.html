@@ -104,7 +104,7 @@
 			item_mod = " list-group-item-danger";
 		}
 		
-		$("#tlist").append("<a class='list-group-item" + item_mod + "' onclick='download_item(\"" + item.download_link +
+		$("#tlist").append("<a class='dl-item list-group-item" + item_mod + "' onclick='download_item(\"" + item.download_link +
 			"\");'>" + item.title + "<div class='pull-right dl-info'>" + 
 				"<span class='glyphicon glyphicon-arrow-up'></span> " + pad(item.seeds, 4) + 
 				" <span class='glyphicon glyphicon-arrow-down'></span> " + pad(item.leech, 4) + 

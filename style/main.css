@@ -11,6 +11,10 @@ body {
 	text-align: left;
 }
 
+.dl-item {
+	cursor: pointer;
+}
+
 #search-field {
 	min-width: 300px;
 }
