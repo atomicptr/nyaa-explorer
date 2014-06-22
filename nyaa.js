@@ -29,7 +29,7 @@ function _nyaa_create_url(page, search_info) {
 	if(!search_info) {
 		search_info = {};
 	}
-
+	
 	var url = search_info.base_url ? search_info.base_url : URL_NYAA;
 	
 	url += page ? "&offset=" + page : "";
