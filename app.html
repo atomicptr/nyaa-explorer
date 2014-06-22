@@ -88,6 +88,7 @@
 	}
 	
 	function insert_list_item(item) {
-		$("#tlist").append("<a class='list-group-item' href='" + item.download_link + "'><span class='badge alert-danger'>37</span><span class='badge alert-success'>13</span>" + item.title + "</a>");
+		var trusted_item = item.trusted ? " list-group-item-success" : "";
+		$("#tlist").append("<a class='list-group-item" + trusted_item + "' href='" + item.download_link + "'><span class='badge alert-danger'>37</span><span class='badge alert-success'>13</span>" + item.title + "</a>");
 	}
 </script>
