@@ -1,0 +1,23 @@
+<!doctype html>
+<title>ROFL</title>
+<ul id="tlist">
+</ul>
+<script src="lib/jquery-2.1.1.js"></script>
+<script src="nyaa.js"></script>
+<script>
+	$(document).ready(function() {
+		var search_options = {
+			base_url: URL_NYAA,
+			query: [
+				"HorribleSubs",
+				"720p"
+			]
+		};
+		
+		nyaa_fetch(0, search_options, function(items) {
+			items.forEach(function(item) {
+				$("#tlist").append("<li><a href='" + item.download_link + "'>" + item.title + "</a></li>");
+			});
+		});
+	});
+</script>
