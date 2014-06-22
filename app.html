@@ -18,7 +18,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">nyaa-explorer</a>
+			<a class="navbar-brand">nyaa-explorer</a>
 		</div>
 
 		<div class="collapse navbar-collapse">
@@ -53,6 +53,8 @@
 <script src="lib/bootstrap-3.1.1/js/bootstrap.min.js"></script>
 <script src="nyaa.js"></script>
 <script>
+	var gui = require("nw.gui");
+
 	var search_options = {
 		base_url: URL_NYAA,
 		query: undefined
@@ -102,12 +104,17 @@
 			item_mod = " list-group-item-danger";
 		}
 		
-		$("#tlist").append("<a class='list-group-item" + item_mod + "' href='" + item.download_link +
-			"'>" + item.title + "<div class='pull-right dl-info'>" + 
+		$("#tlist").append("<a class='list-group-item" + item_mod + "' onclick='download_item(\"" + item.download_link +
+			"\");'>" + item.title + "<div class='pull-right dl-info'>" + 
 				"<span class='glyphicon glyphicon-arrow-up'></span> " + pad(item.seeds, 4) + 
 				" <span class='glyphicon glyphicon-arrow-down'></span> " + pad(item.leech, 4) + 
 				" <span class='glyphicon glyphicon-hdd'></span> " + item.size +
 				"</div></a>");
+	}
+	
+	function download_item(url) {
+		// TODO: download item and start it via gui.Shell.openItem(...);
+		gui.Shell.openExternal(url);
 	}
 	
 	function pad(num, size) {

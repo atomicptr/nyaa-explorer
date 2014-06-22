@@ -1,4 +1,11 @@
 {
 	"name": "nyaa-explorer",
-	"main": "app.html"
+	"main": "app.html",
+	"version": "0.0.1",
+	"window": {
+		"icon": "icon.png",
+		"toolbar": true,
+		"width": 1200,
+		"height": 600
+	}
 }

@@ -10,3 +10,7 @@ body {
 	min-width: 200px;
 	text-align: left;
 }
+
+#search-field {
+	min-width: 300px;
+}
