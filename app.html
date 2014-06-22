@@ -44,8 +44,8 @@
 <!-- body -->
 <div class="container">
 	<div class="content">
-		<ul id="tlist">
-		</ul>
+		<div id="tlist" class="list-group">
+		</div>
 	</div>
 </div>
 
@@ -88,6 +88,6 @@
 	}
 	
 	function insert_list_item(item) {
-		$("#tlist").append("<li><a href='" + item.download_link + "'>" + item.title + "</a></li>");
+		$("#tlist").append("<a class='list-group-item' href='" + item.download_link + "'><span class='badge alert-danger'>37</span><span class='badge alert-success'>13</span>" + item.title + "</a>");
 	}
 </script>
