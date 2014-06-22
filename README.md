@@ -7,6 +7,12 @@ Small application which makes browsing and downloading stuff from [nyaa](http://
 
 ### Builds coming soon...
 
+## Powered by
+
+* node-webkit
+* jQuery
+* Bootstrap
+
 ## License
 
 nyaa-explorer is licensed under the terms of the MIT license.
