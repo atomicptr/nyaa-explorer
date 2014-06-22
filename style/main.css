@@ -2,11 +2,11 @@ body {
 	padding-top: 50px;
 }
 
-.starter-template {
-	padding: 40px 15px;
-	text-align: center;
-}
-
 .content {
 	padding: 40px 15px;
+}
+
+.dl-info {
+	min-width: 200px;
+	text-align: left;
 }
