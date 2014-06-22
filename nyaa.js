@@ -10,22 +10,33 @@ function nyaa_fetch(page, search_info, callback) {
 		var items = [];
 		
 		$(xml).find("item").each(function() {
+			// looks like this: x leecher(s), y seeder(s), z download(s) - SIZE - Trusted
 			var description = $(this).find("description").text();
 		
+			// split it open to get leechers, seeders and download + more in 3 entries
 			var desc_raw = description.split(", ");
-			
+
+			// retrieve seeds and leecher info
 			var seeds = desc_raw[0].split(' ')[0];
 			var leech = desc_raw[1].split(' ')[0];
 			
+			// split downloads + more info
 			var tmp = desc_raw[2].split(' - ');
 			
 			var downloads = tmp[0].split(' ')[0];
 			var size = tmp[1];
 			
 			var trusted = false;
+			var aplus = false;
+			var remake = false;
 			
+			// A+ - Trusted
 			if(tmp.length > 2) {
-				trusted = tmp[2] == "Trusted";
+				var mods = tmp.slice(2);
+				
+				trusted = mods.indexOf("Trusted") > -1;
+				aplus = mods.indexOf("A+") > -1;
+				remake = mods.indexOf("Remake") > -1;
 			}
 		
 			var item = {
@@ -37,10 +48,11 @@ function nyaa_fetch(page, search_info, callback) {
 				leech: leech,
 				downloads: downloads,
 				size: size,
-				trusted: trusted
+				trusted: trusted,
+				aplus: aplus,
+				remake: remake
 			};
-			
-			console.log(item);
+
 			items.push(item);
 		});
 		

@@ -88,7 +88,18 @@
 	}
 	
 	function insert_list_item(item) {
-		var trusted_item = item.trusted ? " list-group-item-success" : "";
-		$("#tlist").append("<a class='list-group-item" + trusted_item + "' href='" + item.download_link + "'><span class='badge alert-danger'>37</span><span class='badge alert-success'>13</span>" + item.title + "</a>");
+		var item_mod = "";
+		
+		if(item.aplus) {
+			item_mod = " list-group-item-info";
+		} else if(item.remake) {
+			item_mod = " list-group-item-warning";
+		} else if(item.trusted) {
+			item_mod = " list-group-item-success";
+		}
+		
+		$("#tlist").append("<a class='list-group-item" + item_mod + "' href='" + item.download_link +
+			"'><span class='badge alert-danger'>" + item.leech + "</span><span class='badge alert-success'>" +
+			item.seeds + "</span>" + item.title + "</a>");
 	}
 </script>
