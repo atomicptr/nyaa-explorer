@@ -22,3 +22,15 @@ function refresh_download_list() {
 function run_item(name, path) {
     gui.Shell.openItem(path);
 }
+
+function btn_start_all() {
+    var download_list = get_download_list();
+
+    download_list.forEach(function(item) {
+        run_item(item.name, item.path);
+    });
+}
+
+function btn_clear() {
+    clear_downloads();
+}

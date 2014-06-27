@@ -161,7 +161,13 @@ function add_to_download_list(item) {
 }
 
 function clear_downloads() {
+    var downloads_list = get_download_list();
+
     window.localStorage.setItem(DOWNLOAD_LIST_IDENT, JSON.stringify([]));
+
+    downloads_list.forEach(function(item) {
+        fs.unlinkSync(item.path);
+    });
 
     refresh_download_list();
 }
