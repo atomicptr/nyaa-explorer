@@ -58,7 +58,7 @@ THE SOFTWARE.
 
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="download-btn" href="#">
+                    <a class="download-btn" onclick="show_download_window();">
                         <span class='glyphicon glyphicon-arrow-down'></span>
                     </a>
                     <span class="badge download-badge alert-success">30</span>
@@ -80,3 +80,9 @@ THE SOFTWARE.
 <script src="lib/bootstrap-3.1.1/js/bootstrap.min.js"></script>
 <script src="js/nyaa.js"></script>
 <script src="js/app.js"></script>
+<script>
+    $(document).ready(function() {
+        refresh_download_list();
+        refresh();
+    });
+</script>

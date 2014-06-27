@@ -49,11 +49,6 @@ $("#search-btn").click(function() {
     refresh();
 });
 
-$(document).ready(function() {
-    refresh_download_list();
-    refresh();
-});
-
 function refresh() {
     nyaa_fetch(0, search_options, function(items) {
         $("#tlist").empty();
@@ -111,13 +106,33 @@ function download_item(name, url) {
 }
 
 function get_download_list() {
-    var download_list_json = window.localStorage.getItem(DOWNLOAD_LIST_IDENT);
+    var download_list_json = __get_valid_download_list();
 
     if(!download_list_json) {
         return [];
     }
 
     return JSON.parse(download_list_json);
+}
+
+function __get_valid_download_list() {
+    var list_json = window.localStorage.getItem(DOWNLOAD_LIST_IDENT);
+
+    var list = JSON.parse(list_json);
+
+    var wrong_entries = [];
+
+    list.forEach(function(item) {
+        if(!fs.existsSync(item.path)) {
+            wrong_entries.push(item);
+        }
+    });
+
+    wrong_entries.forEach(function(item) {
+        remove(list, item);
+    });
+
+    return JSON.stringify(list);
 }
 
 function add_to_download_list(item) {
@@ -157,10 +172,34 @@ function refresh_download_list() {
     $(".download-badge").html(download_list.length);
 }
 
+function show_download_window() {
+    var dl_window = gui.Window.open('ui/download_manager.html', {
+        position: "center",
+        toolbar: false,
+        focus: true,
+        width: 800,
+        height: 600
+    });
+
+    dl_window.on("close", function() {
+        refresh_download_list();
+
+        this.close(true);
+    });
+}
+
 function pad(num, size) {
     var s = num+"";
     while (s.length < size) s = "0" + s;
     return s;
+}
+
+function remove(array, item) {
+    var i;
+
+    while((i = array.indexOf(item)) != -1) {
+        array.splice(i, 1);
+    }
 }
 
 function get_home_dir() {

@@ -1,11 +1,11 @@
 {
-	"name": "nyaa-explorer",
-	"main": "app.html",
-	"version": "0.1.0",
-	"window": {
-		"icon": "icons/icon.png",
-		"toolbar": false,
-		"width": 1200,
-		"height": 600
-	}
+    "name": "nyaa-explorer",
+    "main": "app.html",
+    "version": "0.2.0",
+    "window": {
+        "icon": "icons/icon.png",
+        "toolbar": false,
+        "width": 1200,
+        "height": 600
+    }
 }
