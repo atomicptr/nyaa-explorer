@@ -33,43 +33,47 @@ THE SOFTWARE.
 
 <!-- navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand">nyaa-explorer</a>
-		</div>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">nyaa-explorer</a>
+        </div>
 
-		<div class="collapse navbar-collapse">
-			<div class="col-sm-3 col-md-3 navbar-left">
-				<form class="navbar-form" role="search">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search" id="search-field" />
-						<div class="input-group-btn">
-							<button class="btn btn-success" type="button" id="search-btn"><i class="glyphicon glyphicon-search"></i></button>
-						</div>
-					</div>
-				</form>
-			</div>
-		
-			<!-- TODO: readd later
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Settings</a></li>
-			</ul>-->
-		</div>
-	</div>
+        <div class="collapse navbar-collapse">
+            <div class="col-sm-3 col-md-3 navbar-left">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" id="search-field" />
+                        <div class="input-group-btn">
+                            <button class="btn btn-success" type="button" id="search-btn"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="download-btn" href="#">
+                        <span class='glyphicon glyphicon-arrow-down'></span>
+                    </a>
+                    <span class="badge download-badge alert-success">30</span>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <!-- body -->
 <div class="container">
-	<div class="content">
-		<div id="tlist" class="list-group">
-		</div>
-	</div>
+    <div class="content">
+        <div id="tlist" class="list-group">
+        </div>
+    </div>
 </div>
 
 <script src="lib/jquery-2.1.1.js"></script>

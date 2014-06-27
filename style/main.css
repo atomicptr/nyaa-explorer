@@ -1,20 +1,31 @@
 body {
-	padding-top: 50px;
+   padding-top: 50px;
 }
 
 .content {
-	padding: 40px 15px;
+    padding: 40px 15px;
 }
 
 .dl-info {
-	min-width: 200px;
-	text-align: left;
+    min-width: 200px;
+    text-align: left;
 }
 
 .dl-item {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #search-field {
-	min-width: 300px;
+    min-width: 300px;
+}
+
+.download-btn {
+    float: left !important;
+}
+
+.download-badge {
+    float: left !important;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-left: -10px;
 }
