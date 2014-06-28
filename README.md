@@ -7,11 +7,11 @@ Small application which makes browsing and downloading stuff from [nyaa](http://
 
 ## Builds
 
-**last updated: 2014-06-22 20:27**
+**last updated: 2014-06-28 12:20**
 
-* [Linux 64bit](https://mega.co.nz/#!glB1nYiJ!B3DwaT82y5kFXkq7shx8Xdgn1TXm29VVTK1Jt-GvApc)
-* [OS X](https://mega.co.nz/#!YkRhUIKZ!KyZ-likEQ4N1XB6sOvJdWN3E9NzOAWYEY3MXq6D-ByU)
-* [Windows 64bit](https://mega.co.nz/#!xw4y1IZY!Rs3EvegQa2lVmaTUYS6Cdrb1j8Mv7Wweab6NWoVnRkw)
+* [Linux 64bit](https://mega.co.nz/#!V9JmkKoI!B4hiobznbGOdYXHvRTzxN8GO4K2MAtUsM8FkQgXOuG0)
+* [OS X](https://mega.co.nz/#!0xojFAQI!YwrgwbRi1a9grAa8fBOloSndMayQ1JUk065jwJ1LDSM)
+* [Windows 64bit](https://mega.co.nz/#!NspCXBAa!-XJjZEGBW4BsI6WvfODsTONmeMnPVKfAkgUfQasiO2I)
 
 If you want something else just download the node-webkit executable and clone this repo ;).
 
