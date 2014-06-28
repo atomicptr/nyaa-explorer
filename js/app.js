@@ -108,10 +108,6 @@ function download_item(name, url) {
 function get_download_list() {
     var download_list_json = __get_valid_download_list();
 
-    if(!download_list_json) {
-        return [];
-    }
-
     return JSON.parse(download_list_json);
 }
 
@@ -122,17 +118,21 @@ function __get_valid_download_list() {
 
     var wrong_entries = [];
 
-    list.forEach(function(item) {
-        if(!fs.existsSync(item.path)) {
-            wrong_entries.push(item);
-        }
-    });
+    if(!list) {
+        return JSON.stringify([]);
+    } else {
+        list.forEach(function(item) {
+            if(!fs.existsSync(item.path)) {
+                wrong_entries.push(item);
+            }
+        });
 
-    wrong_entries.forEach(function(item) {
-        remove(list, item);
-    });
+        wrong_entries.forEach(function(item) {
+            remove(list, item);
+        });
 
-    return JSON.stringify(list);
+        return JSON.stringify(list);
+    }
 }
 
 function add_to_download_list(item) {
