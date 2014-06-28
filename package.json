@@ -1,7 +1,7 @@
 {
     "name": "nyaa-explorer",
     "main": "app.html",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "window": {
         "icon": "icons/icon.png",
         "toolbar": false,

@@ -179,9 +179,11 @@ function refresh_download_list() {
 }
 
 function show_download_window() {
+    var pkg = require('./package.json');
+
     var dl_window = gui.Window.open('ui/download_manager.html', {
         position: "center",
-        toolbar: false,
+        toolbar: pkg.window.toolbar,
         focus: true,
         width: 800,
         height: 600

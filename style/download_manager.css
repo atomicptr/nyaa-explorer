@@ -8,6 +8,12 @@ body {
     cursor: pointer;
 }
 
+.dl-heading {
+    margin-top: 20px;
+    margin-bottom: -5px;
+    margin-left: 10px;
+}
+
 .div-btn {
     margin-bottom: 10px;
     text-align: right;
